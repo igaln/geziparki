@@ -63,7 +63,8 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=475346625892394";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <h1>THIS IS A LIVE FEED OF IMAGES, VIDEOS and VINES FROM #GEZIPARKI, #DIRENGEZIPARKI TWITTER FEEDS, PLEASE SHARE  </h1>
+    <h1>THIS IS AN ONGOING ARCHIVE OF IMAGE, VIDEOS, VINES and URLS BEING SHARED FROM TURKEY, THE WEBSITE AIMS TO DOCUMENT ALL THE POLICE BRUTALITY ENFORCED BY THE ERDOGAN ADMINISTRATION IN TURKEY.
+     </h1>
     <p>there is a scroll bug, trying to fix it</P>
 
     <h2><a href="/?begin=0">REFRESH</a></h2>
