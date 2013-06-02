@@ -44,8 +44,9 @@ exports.index = function(req, res){
 			options = {"skip" : start, "limit" : end};
       		client.collection("tweets", function(err,collection) {
       			collection.find(query,fields,options ).sort({_id:-1}).toArray(function(err, results){
-    					console.log("results " + results.length);
+    					//console.log("results " + results.length);
     					
+    					var duplicateChecker = [];
     					var length = results.length,
 						 element = null;
 						for (var i = 0; i < length; i++) {
@@ -53,6 +54,10 @@ exports.index = function(req, res){
 						 	 var urls = element.entities.urls[0];
 						 	 if(typeof urls!='undefined'){
 						 	 		
+						 	 		//if(duplicateChecker.contains(urls.expanded_url))
+						 	 		if(duplicateChecker.indexOf(urls.expanded_url)  == -1) {
+
+						 	 		duplicateChecker.push(urls.expanded_url);
 
 						 	 		var isImage = false;
 						 	 		var isVine = false;
@@ -78,6 +83,8 @@ exports.index = function(req, res){
 									} else {
 										tweetdata.push({"date":element.created_at,"url":urls.expanded_url,"text":element.text,"isImage":isImage,"isVine":isVine,"isTube":isTube})
 									}
+
+								}
 									
 
 						 	 		
@@ -94,3 +101,14 @@ exports.index = function(req, res){
 
 
 };
+
+if(!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function(needle) {
+        for(var i = 0; i < this.length; i++) {
+            if(this[i] === needle) {
+                return i;
+            }
+        }
+        return -1;
+    };
+}
