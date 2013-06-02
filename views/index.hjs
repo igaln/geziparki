@@ -36,6 +36,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
     <h1>THIS IS A LIVE FEED OF IMAGES, VIDEOS and VINES FROM #GEZIPARKI, #DIRENGEZIPARKI TWITTER FEEDS, PLEASE SHARE  </h1>
+    <p>there is a scroll bug with Chrome with all the embeds, so please use Safari, Firefox, or IE ...</P>
 
     <h2><a href="/?begin=0">REFRESH</a></h2>
    <div class="fb-like" data-href="http://geziparki.herokuapp.com " data-send="true" data-width="450" data-show-faces="true"></div>
