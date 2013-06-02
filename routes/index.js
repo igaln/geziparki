@@ -5,18 +5,19 @@
  */
 
 exports.index = function(req, res){
-
-	var paginationCount =  req.query.begin;
+	res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header('X-Frame-Options: GOFORIT');
 	
 
-	 if(typeof start=='undefined'){
+	 if(typeof req.query.begin==='undefined'){
 	 	console.log("of");
 	 	start = 0;
 	 } else {
-	 	start = parseInt(paginationCount);
+	 	start = parseInt(req.query.begin);
 	 }
 
-	 var end = start + 30;
+	 var end = start + 7;
 
 	console.log(start + " " + end);
 
@@ -42,7 +43,7 @@ exports.index = function(req, res){
 			var query = {"text": /.*https.*/};
 			options = {"skip" : start, "limit" : end};
       		client.collection("tweets", function(err,collection) {
-      			collection.find(query,fields,options ).toArray(function(err, results){
+      			collection.find(query,fields,options ).sort({_id:-1}).toArray(function(err, results){
     					console.log("results " + results.length);
     					
     					var length = results.length,
@@ -65,10 +66,21 @@ exports.index = function(req, res){
 									}
 									if( urls.expanded_url.indexOf("youtube") !== -1) {
 										isTube = true;
+										var turl = "";
+										if(urls.expanded_url.indexOf("&") !== -1) {
+										    turl = urls.expanded_url.split("&");
+											turl = turl[1].split("=");
+										} else {
+											turl = urls.expanded_url.split("v=");
+										}
+										tubeUrl = "http://www.youtube.com/embed/" + turl[1];
+										tweetdata.push({"date":element.created_at,"url":tubeUrl,"text":element.text,"isImage":isImage,"isVine":isVine,"isTube":isTube})
+									} else {
+										tweetdata.push({"date":element.created_at,"url":urls.expanded_url,"text":element.text,"isImage":isImage,"isVine":isVine,"isTube":isTube})
 									}
 									
 
-						 	 		tweetdata.push({"date":element.created_at,"url":urls.expanded_url,"text":element.text,"isImage":isImage,"isVine":isVine,"isTube":isTube})
+						 	 		
 						 	 }
 						 	 
 						  // Do something with element i.
