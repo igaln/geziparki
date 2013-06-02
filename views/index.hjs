@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
+  	<meta name="title" content="#GEZIPARKI ARCHIVES || #GEZIPARKI ARSIVLERI" />
+	<meta name="description" content="live stream news of #Geziparki images,videos,vines and links shared by the people for the people." />
+	<link rel="image_src" href="http://i.ensonhaber.com/resimler/diger/gezi_parki_7431.jpg" />
+
+    <title>#GEZIPARKI ARCHIVES || #GEZIPARKI ARSIVLERI</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <style>
