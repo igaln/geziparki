@@ -2,7 +2,15 @@
 <html>
   <head>
   	<meta name="title" content="#GEZIPARKI ARCHIVES || #GEZIPARKI ARSIVLERI" />
-	<meta name="description" content="live stream news of #Geziparki images,videos,vines and links shared by the people for the people." />
+	<meta name="description" content="Live stream news of #Geziparki Uprising with images, videos, vines and links shared by the people for the people." />
+	<meta property="og:title" content="#GEZIPARKI ARCHIVES || #GEZIPARKI ARSIVLERI" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://i.ensonhaber.com/resimler/diger/gezi_parki_7431.jpg" />
+    <meta property="og:url" content="http://geziparki.herokuapp.com/" />
+    <meta property="og:site_name" content="#GEZIPARKI ARCHIVES || #GEZIPARKI ARSIVLERI" />
+    <meta property="og:description" content="Live stream news of #Geziparki Uprising with images, videos, vines and links shared by the people for the people." />
+    <meta property="fb:app_id" content="475346625892394" />
+
 	<link rel="image_src" href="http://i.ensonhaber.com/resimler/diger/gezi_parki_7431.jpg" />
 
     <title>#GEZIPARKI ARCHIVES || #GEZIPARKI ARSIVLERI</title>
