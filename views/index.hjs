@@ -8,6 +8,8 @@
     html, body {
     overflow-x:                hidden;
     overflow-y:                auto;
+    margin-top: 0;
+    margin-left: 0;
 }
     	a:link {color:#FF0000; font-size: 40px; margin-bottom: 50px;}      /* unvisited link */
 		a:visited {color:#00FF00;}  /* visited link */
@@ -18,9 +20,35 @@
 		li {font-size:50px;}
     </style>
     <script>
-  	$(document).ready(function(){
-   		$(this).scrollTop(0);
-	});
+  	$(document).ready(function() {
+    if (window.location.hash) { 
+        //bind to scroll function
+        $(document).scroll( function() {
+            var hash = window.location.hash
+            var hashName = hash.substring(1, hash.length);
+            var element;
+
+            //if element has this id then scroll to it
+            if ($(hash).length != 0) {
+                element = $(hash);
+            }
+            //catch cases of links that use anchor name
+            else if ($('a[name="' + hashName + '"]').length != 0)
+            {
+                //just use the first one in case there are multiples
+                element = $('a[name="' + hashName + '"]:first');
+            }
+
+            //if we have a target then go to it
+            if (element != undefined) {
+                window.scrollTo(0, element.position().top);
+            }
+            //unbind the scroll event
+            $(document).unbind("scroll");
+        });
+    }
+
+});
   	</script>
   </head>
   <body>
@@ -36,7 +64,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
     <h1>THIS IS A LIVE FEED OF IMAGES, VIDEOS and VINES FROM #GEZIPARKI, #DIRENGEZIPARKI TWITTER FEEDS, PLEASE SHARE  </h1>
-    <p>there is a scroll bug with Chrome with all the embeds, so please use Safari, Firefox, or IE ...</P>
+    <p>there is a scroll bug, trying to fix it</P>
 
     <h2><a href="/?begin=0">REFRESH</a></h2>
    <div class="fb-like" data-href="http://geziparki.herokuapp.com " data-send="true" data-width="450" data-show-faces="true"></div>
