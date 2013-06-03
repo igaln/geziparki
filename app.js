@@ -6,6 +6,10 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , vines = require('./routes/vines')
+  , images = require('./routes/images')
+  , youtube = require('./routes/youtube')
+  , map = require('./routes/map')
   , http = require('http')
   , path = require('path');
 
@@ -31,7 +35,12 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/vines', vines.index);
+app.get('/images', images.index);
+app.get('/youtube', youtube.index);
+
 app.get('/users', user.list);
+app.get('/map', map.view);
 
 
 http.createServer(app).listen(app.get('port'), function(){

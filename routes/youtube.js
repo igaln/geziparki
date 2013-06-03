@@ -9,14 +9,15 @@ exports.index = function(req, res){
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header('X-Frame-Options: GOFORIT');
 	
-  	console.log(req.query.begin);
+
 	 if(typeof req.query.begin==='undefined'){
+	 	console.log("of");
 	 	start = 0;
 	 } else {
 	 	start = parseInt(req.query.begin);
 	 }
 
-	 var end = start + 100;
+	 var end = start + 7;
 
 	console.log(start + " " + end);
 
@@ -24,12 +25,12 @@ exports.index = function(req, res){
 
 
 	 var Db = require('mongodb').Db
-  , Connection = require('mongodb').Connection
-  , Server = require('mongodb').Server
-  , format = require('util').format;
+  	, Connection = require('mongodb').Connection
+ 	, Server = require('mongodb').Server
+  	, format = require('util').format;
 
   //166.78.181.167
-	 var client = new Db('gezi', new Server("localhost", 27017, {}), {w: 1});
+	 var client = new Db('gezi', new Server("166.78.181.167", 27017, {}), {w: 1});
        
 
     	client.open(function(err, p_client) {
@@ -39,16 +40,13 @@ exports.index = function(req, res){
 			    "text": true,
 			    "entities":true
 			};
-			var query = {"text": /.*http.*/};
+			var query = {"entities.urls.expanded_url":/.*youtube.*/};
 			options = {"skip" : start, "limit" : end};
       		client.collection("tweets", function(err,collection) {
       			collection.find(query,fields,options ).sort({_id:-1}).toArray(function(err, results){
     					//console.log("results " + results.length);
     					
     					var duplicateChecker = [];
-
-    				 if(typeof results!=='undefined' && results!==null) {
-
     					var length = results.length,
 						 element = null;
 						for (var i = 0; i < length; i++) {
@@ -66,13 +64,13 @@ exports.index = function(req, res){
 						 	 		var isTube = false;
 
 									if( urls.expanded_url.indexOf(".jpg") !== -1 || urls.expanded_url.indexOf(".png") !== -1 || urls.expanded_url.indexOf(".jpeg") !== -1) {
-										//isImage = true;
+										isImage = true;
 									}
 									if( urls.expanded_url.indexOf("vine.co") !== -1) {
-										//isVine = true;
+										isVine = true;
 									}
 									if( urls.expanded_url.indexOf("youtube") !== -1) {
-										//isTube = true;
+										isTube = true;
 										var turl = "";
 										if(urls.expanded_url.indexOf("&") !== -1) {
 										    turl = urls.expanded_url.split("&");
@@ -95,10 +93,8 @@ exports.index = function(req, res){
 						  // Do something with element i.
 						}
 
-					}
-
 						 console.log(tweetdata.length);
- 						 res.render('index', { tweetdata: tweetdata, start:end  });
+ 						 res.render('index', { tweetdata: tweetdata, start:end, type:"youtube" });
 				});
       		});
 		 });

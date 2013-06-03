@@ -1,0 +1,40 @@
+
+   html, body {
+    overflow-x:                hidden;
+    overflow-y:                auto;
+    margin-top: 0;
+    margin-left: 0;
+
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+    
+    #content a:link {color:#333333; font-weight: bold; font-family: "Verdana"; font-size: 30px; margin-bottom: 50px;}      /* unvisited link */
+		#content a:visited {color:#00FF00;}  /* visited link */
+		#content a:hover {color:#FF00FF;}  /* mouse over link */
+		#content a:active {color:#0000FF;}  /* selected link */
+		 #content {margin-bottom: 50px;}
+		
+		#sep {width:100%;height: 30px;background-color: black; color: #FFF;}
+		#sep a:link {color:#fff;  font-family: "Verdana"; font-size: 25px; margin-left: 20px;} 
+		#sep a:visited {color:#fff;}  /* visited link */
+		#sep a:hover {color:#FF00FF;}  /* hover link */
+		
+		li {font-size:50px;}
+
+
+		#menu {
+			margin-left: 20px;
+			margin-bottom: 10px;
+		}
+		#social {
+			
+			margin: 15px;
+		}
+
+  #menu a:link {color:#000; font-weight: lighter; font-family: "Verdana"; font-size: 45px; margin-bottom: 50px;}      /* unvisited link */
+		#menu a:visited {color:#000;}  /* visited link */
+		#menu a:hover {color:#FF00FF;}  /* mouse over link */
+		#menu a:active {color:#0000FF;}  /* selected link */
+
+
+ 
