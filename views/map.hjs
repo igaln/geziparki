@@ -119,7 +119,7 @@ function onEachFeature(feature, layer) {
     <p style="margin-left:20px; width:900px;">THIS IS AN ONGOING ARCHIVE OF IMAGES, VIDEOS, VINES and URLS BEING SHARED FROM TURKEY, THE WEBSITE AIMS TO DOCUMENT ALL POLICE BRUTALITY ENFORCED BY THE ERDOGAN ADMINISTRATION AGAINST PEACEFUL PROTESTERS IN TURKEY.
      </p>
 
-     <div id="menu"><a href="/map">MAP</a> &#8195;&#9830; &#8195;<a href="/images">IMAGES</a>  &#8195;&#9830; &#8195;<a href="/vines">VINES</a>  &#8195;&#9830; &#8195;<a href="/youtube">YOUTUBE</a></div>
+     <div id="menu"><a href="/">FEED</a> &#8195;&#9830; &#8195;<a href="/map">MAP</a> &#8195;&#9830; &#8195;<a href="/images">IMAGES</a>  &#8195;&#9830; &#8195;<a href="/vines">VINES</a>  &#8195;&#9830; &#8195;<a href="/youtube">YOUTUBE</a></div>
    
    <div id="social">
    <div class="fb-like" data-href="http://geziparki.herokuapp.com" data-send="true" data-layout="button_count" data-width="200" data-show-faces="false" data-action="recommend"></div>
