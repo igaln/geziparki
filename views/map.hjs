@@ -107,8 +107,8 @@ function onEachFeature(feature, layer) {
   	</script>
   </head>
   <body>
-  	<div id="fb-root"></div>
-  
+  	
+ <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -116,13 +116,15 @@ function onEachFeature(feature, layer) {
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=475346625892394";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+
     <p style="margin-left:20px; width:900px;">THIS IS AN ONGOING ARCHIVE OF IMAGES, VIDEOS, VINES and URLS BEING SHARED FROM TURKEY, THE WEBSITE AIMS TO DOCUMENT ALL POLICE BRUTALITY ENFORCED BY THE ERDOGAN ADMINISTRATION AGAINST PEACEFUL PROTESTERS IN TURKEY.
      </p>
 
      <div id="menu"><a href="/">FEED</a> &#8195;&#9830; &#8195;<a href="/map">MAP</a> &#8195;&#9830; &#8195;<a href="/images">IMAGES</a>  &#8195;&#9830; &#8195;<a href="/vines">VINES</a>  &#8195;&#9830; &#8195;<a href="/youtube">YOUTUBE</a></div>
    
    <div id="social">
-   <div class="fb-like" data-href="http://geziparki.herokuapp.com" data-send="true" data-layout="button_count" data-width="200" data-show-faces="false" data-action="recommend"></div>
+   <div class="fb-like" data-href="http://www.geziparki.me" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true" data-font="verdana" data-action="recommend"></div>
   
   <a href="https://twitter.com/share" class="twitter-share-button" data-text="This is a live feed of images, videos and vines from protests in Turkey. Please share." data-hashtags="direngeziparki,geziparki">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
