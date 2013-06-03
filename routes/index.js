@@ -29,7 +29,7 @@ exports.index = function(req, res){
   , format = require('util').format;
 
   //166.78.181.167
-	 var client = new Db('gezi', new Server("localhost", 27017, {}), {w: 1});
+	 var client = new Db('gezi', new Server("166.78.181.167", 27017, {}), {w: 1});
        
 
     	client.open(function(err, p_client) {
