@@ -96,7 +96,7 @@ exports.index = function(req, res){
 						}
 
 					}
-
+						client.close();	
 						 console.log(tweetdata.length);
  						 res.render('index', { tweetdata: tweetdata, start:end  });
 				});

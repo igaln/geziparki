@@ -119,6 +119,7 @@ exports.view = function(req, res){
 						} // results parsin
 
 						// console.log(geoJSON);
+						client.close();	
  						 res.render('map', { mapdata: JSON.stringify(geoJSON),type:"map" });
 				});
       		});
