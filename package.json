@@ -9,7 +9,11 @@
     "express": "3.2.5",
     "hjs": "*",
     "stylus": "*",
-    "mongodb": "latest"
+    "mongodb": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "connect-flash" : "latest",
+    "underscore" : "latest"
   },
   "engines": {
     "node": "0.10.x",
