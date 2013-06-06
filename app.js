@@ -128,7 +128,73 @@ app.get('/map', map.view);
 app.get('/map', map.view);
 app.get('/factchecker',fact.index);
 
-app.get ( '/data/:name' , fact.data);
+//app.get ( '/data/:name' , fact.data);  //file name + function for req  / res
+
+
+app.get ( '/data/:start/:end/:text' , function(req,res) {
+
+  // console.log(req.params);
+  // res.send('start ' + req.params.start);
+  // res.send('end ' + req.params.end);
+  // res.send('text ' + req.params.text);
+
+  
+  //  if(typeof req.query.begin==='undefined'){
+  //   console.log("of");
+  //   start = 0;
+  //  } else {
+  //   start = parseInt(req.query.begin);
+  //  }
+
+  //  var end = start + 7;
+
+  // console.log(start + " " + end);
+
+  // var tweetdata  = [];
+   var Db = require('mongodb').Db
+    , Connection = require('mongodb').Connection
+  , Server = require('mongodb').Server
+    , format = require('util').format;
+
+  //166.78.181.167
+   var client = new Db('gezi', new Server("166.78.181.167", 27017, {}), {w: 1});
+       
+      client.open(function(err, p_client) {
+          
+          var fields = {
+            "created_at": true,
+            "text": true,
+            "entities":true
+           };
+
+          // In Between these Times Query
+          var startQuery = new Date(req.params.start);
+          var endQuery = new Date(req.params.end);
+
+          //var query = {"_id": {"$gte": startQuery, "$lt": endQuery} };
+          //----//
+
+
+          var query = {"text" :  new RegExp(req.params.text) };
+
+          client.collection("tweets", function(err,collection) {
+            collection.find(query,fields).sort({_id:-1}).toArray(function(err, results){
+              res.send(results);
+              
+            });
+
+            client.close(); 
+             //console.log(tweetdata.length);
+             //res.render('index', { tweetdata: tweetdata, start:end, type:"vines" });
+         });
+
+
+
+      });
+}); 
+
+
+
 
 
 app.get('/account', ensureAuthenticated, function(req, res){

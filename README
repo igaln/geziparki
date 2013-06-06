@@ -9,3 +9,11 @@ node app
 and you should be running at http://localhost:3000/
 
 <3
+
+##API JSON REST Query Examples:
+
+Format:
+http://localhost:3000/data/starttime/endtime/text
+
+Sample:
+http://localhost:3000/data/2013,6,1/2013,6,4/Occupy
